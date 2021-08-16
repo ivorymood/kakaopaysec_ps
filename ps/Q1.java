@@ -12,12 +12,11 @@ public class Q1 {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        Q1 q1 = new Q1();
-        System.out.println(q1.solution(br.readLine()));
+        System.out.println(solution(br.readLine()));
         br.close();
     }
 
-    public String solution(String str) {
+    public static String solution(String str) {
 
         Map<String, String> dict = new HashMap<>();
         str = "1[" + str + ']';
@@ -27,7 +26,7 @@ public class Q1 {
         return dict.get(str);
     }
 
-    public int dfs(char[] chars, Map<String, String> dict, int rpCnt, int cntSrtIdx, int idx) {
+    public static int dfs(final char[] chars, final Map<String, String> dict, final int rpCnt, final int cntSrtIdx, int idx) {
 
         StringBuilder sb = new StringBuilder();
 
@@ -62,7 +61,7 @@ public class Q1 {
         return idx + 1;
     }
 
-    public static String chars2String(char[] chars, int start, int end) {
+    public static String chars2String(final char[] chars, final int start, final int end) {
         StringBuilder sb = new StringBuilder();
         for (int i = start; i < end; ++i) {
             sb.append(chars[i]);
