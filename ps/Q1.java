@@ -57,7 +57,10 @@ public class Q1 {
             - (key, value) = (number[content], number * content) 형태로 dict에 저장
             - ex) (3[a], aaa)
          */
-        dict.put(chars2String(chars, cntSrtIdx, idx + 1), repeatString(sb.toString(), rpCnt));
+        String key = chars2String(chars, cntSrtIdx, idx + 1);
+        if (!dict.containsKey(key)) {
+            dict.put(key, repeatString(sb.toString(), rpCnt));
+        }
         return idx + 1;
     }
 
